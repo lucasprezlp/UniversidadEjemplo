@@ -67,11 +67,5 @@ public class Alumno {
         return "Alumno{" + "idAlumno=" + idAlumno + ", apellido=" + apellido + ", nombre=" + nombre + ", fechaNac=" + fechaNac + ", activo=" + activo + '}';
     }
     
-    
-    
-    
-    
-    
-    
-    
+  
 }
