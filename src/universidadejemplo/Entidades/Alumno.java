@@ -60,7 +60,6 @@ public class Alumno {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-
     
     @Override
     public String toString() {
