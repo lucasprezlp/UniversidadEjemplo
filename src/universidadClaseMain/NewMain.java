@@ -1,4 +1,3 @@
-
 package universidadClaseMain;
 
 import java.sql.Connection;
@@ -10,13 +9,43 @@ import universidadejemploAccesoADAtos.Conexion;
 public class NewMain {
 
     public static void main(String[] args) {
-      Connection con= Conexion.getConexion();
-      
-      //probar
-      Alumno a1 = new Alumno(1234567, "suarez", "juana", LocalDate.of(2001,05,25), true );
-      AlumnoData alu = new AlumnoData();
-      alu.guardarAlumno(a1);
-      
+        Connection con = Conexion.getConexion();
+
+        //probar
+        
+        AlumnoData alu = new AlumnoData();
+        Alumno a1 = new Alumno(111, "Pérez", "José", LocalDate.of(2001, 05, 25), true);
+        Alumno a2 = new Alumno(222, "Pérez", "Pablo", LocalDate.of(2001, 05, 25), true);
+        Alumno a3 = new Alumno(333, "Pérez", "carlos", LocalDate.of(2001, 05, 25), true);
+        Alumno a6 = new Alumno(444, "Pérez", "josue", LocalDate.of(2001, 05, 25), true);
+        Alumno a4 = new Alumno(555, "Pérez", "Joséf", LocalDate.of(2001, 05, 25), true);
+       // Alumno a5 = new Alumno(666, "Pérez", "Lucas", LocalDate.of(2001, 05, 25), true);
+        
+        // Usar este constructor de alumno para hacer el Update!
+       // Alumno a5 = new Alumno(6, 666, "Pérez", "Lucas", LocalDate.of(2001, 05, 25), false);
+        /* 
+        alu.guardarAlumno(a2);
+          alu.guardarAlumno(a3);
+          alu.guardarAlumno(a4);
+          alu.guardarAlumno(a5);
+          alu.guardarAlumno(a6);
+       */
+        //Metodo para modificar datos de un alumno
+         // alu.modificarAlumno(a5);
+        
+        //Metodo para eliminar alumno
+       // alu.eliminarAlumno(0);
+        
+       // alu.buscarAlumno(2);
+        
+        //alu.buscarAlumnoPorDni(133333);
+        
+       for (Alumno alumno:alu.listarAlumno()){
+           System.out.println(alumno.getDni());
+           System.out.println(alumno.getNombre());
+           System.out.println(alumno.getFechaNac());
+           System.out.println("********************");
+       }
     }
-    
+
 }
