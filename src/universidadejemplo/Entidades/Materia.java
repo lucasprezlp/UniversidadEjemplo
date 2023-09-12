@@ -8,6 +8,15 @@ public class Materia {
     public int anio; 
     public boolean activo;
 
+    public Materia() {
+    }
+
+    public Materia(String nombre, int anio, boolean activo) {
+        this.nombre = nombre;
+        this.anio = anio;
+        this.activo = activo;
+    }
+ 
     public Materia(int idMateria, String nombre, int anio, boolean activo) {
         this.idMateria = idMateria;
         this.nombre = nombre;
