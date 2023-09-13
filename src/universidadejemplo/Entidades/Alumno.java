@@ -30,6 +30,10 @@ public class Alumno {
         this.activo = activo;
     }
 
+    public Alumno(int idAlumno) {
+        this.idAlumno = idAlumno;
+    }
+
     public Alumno() {
     }
 
