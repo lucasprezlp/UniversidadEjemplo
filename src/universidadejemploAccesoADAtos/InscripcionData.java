@@ -1,17 +1,13 @@
 package universidadejemploAccesoADAtos;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import universidadejemplo.Entidades.Alumno;
-import universidadejemplo.Entidades.Inscripcion;
-import universidadejemplo.Entidades.Materia;
+import universidadejemplo.Entidades.*;
+//import universidadejemplo.Entidades.Alumno;
+//import universidadejemplo.Entidades.Inscripcion;
+//import universidadejemplo.Entidades.Materia;
 
 public class InscripcionData {
 
@@ -51,10 +47,11 @@ public class InscripcionData {
 //        return inscripcion;
 //    }
     public List<Materia> obtenerMateriasCursadas(int id) {
-        List<Materia> materias = new ArrayList<Materia>();
+        List<Materia> materias = new ArrayList<>();
         try {
-            String sql = "SELECT inscripcion.idMateria, nombre, anio FROM inscripcion, materia"
-                    + " WHERE inscripcion.idMateria=materia.idMateria\n AND inscripcion.idAlumno=?;";
+            String sql = "SELECT inscripcion.idMateria, nombre, anio FROM inscripcion "
+                    + "JOIN materia ON (inscripcion.idMateria=materia.idMateria) WHERE inscripcion.idAlumno=?"
+                    + " AND materia.estado=1;";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
@@ -64,34 +61,28 @@ public class InscripcionData {
                 materia.setNombre(rs.getString("nombre"));
                 materia.setAnio(rs.getInt("anio"));
                 materias.add(materia);
-                //JOptionPane.showMessageDialog(null, alumnos.toString());
                 ps.close();
             }
-            //System.out.println(materias + "\n");
-           // JOptionPane.showMessageDialog(null, materias + "\n");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al obtener la materia" + "\n" + ex);
             System.out.println(ex);
         }
         return materias;
     }
-
     public List<Materia> obtenerMateriasNOCursadas(int id) {
         List<Materia> materias = new ArrayList<Materia>();
         try {
-            String sql = "SELECT inscripcion.idMateria, nombre, anio FROM inscripcion, materia"
-                    + " WHERE inscripcion.idMateria=materia.idMateria\n AND inscripcion.idAlumno=?;";
+            String sql = "select idMateria, nombre from materia where idMateria"
+                    + " not in (SELECT idmateria from inscripcion WHERE idAlumno=?)";
             PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             Materia materia = new Materia();
             while (rs.next()) {
                 materia.setIdMateria(rs.getInt("idMateria"));
                 materia.setNombre(rs.getString("nombre"));
-                materia.setAnio(rs.getInt("año"));
                 materias.add(materia);
-                //JOptionPane.showMessageDialog(null, alumnos.toString());
                 ps.close();
-
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al obtener la materia");
@@ -125,7 +116,24 @@ public class InscripcionData {
         }
     }
 
-//    public List<Alumno> obtenerAlumnosXMateria(int idMateria) {
-//        return alumnos;
-//    }
+    public List<Alumno> obtenerAlumnosXMateria(int idMateria) {
+         List<Alumno> alu = new ArrayList<>();
+         try{
+         String sql ="SELECT inscripcion.idAlumno FROM inscripcion JOIN alumno "
+                 + "ON (inscripcion.idAlumno=alumno.idAlumno) WHERE inscripcion.idMateria=?";
+         PreparedStatement ps = con.prepareStatement(sql);
+         
+           ps.setInt(1, idMateria);
+            ResultSet rs = ps.executeQuery();
+            Alumno al = new Alumno();
+            while (rs.next()) {
+                al.setIdAlumno(rs.getInt("idAlumno"));
+                alu.add(al);
+                ps.close();
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al obtener la materia");
+        }        
+        return alu;
+    }
 }
