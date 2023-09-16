@@ -3,6 +3,7 @@ package universidadejemploAccesoADAtos;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import javax.swing.JOptionPane;
 import universidadejemplo.Entidades.*;
 //import universidadejemplo.Entidades.Alumno;
@@ -39,13 +40,57 @@ public class InscripcionData {
         }
     }
 
-//    public List<Inscripcion> obtenerInscripciones() {
-//        return inscripcion;
-//    }
-//
-//    public List<Inscripcion> obtenerInscripcionesPorAlumno(int id) {
-//        return inscripcion;
-//    }
+    public List<Inscripcion> obtenerInscripciones() {
+        List<Inscripcion> inscripciones = new ArrayList<>();
+        PreparedStatement ps = null;
+        try {
+            String sql = "SELECT * FROM inscripcion";
+            ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            Inscripcion inscripcion;
+            while (rs.next()) {
+                inscripcion = new Inscripcion();
+                inscripcion.setIdInscripcion(rs.getInt("idInscripto"));
+                inscripcion.setNota(rs.getDouble("nota"));
+                inscripciones.add(inscripcion);
+                JOptionPane.showMessageDialog(null, "Inscripciones listadas");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return inscripciones;
+    }
+
+    public List<Inscripcion> obtenerInscripcionesPorAlumno(int id) {
+        List<Inscripcion> inscripciones = new ArrayList<>();
+        PreparedStatement ps = null;
+
+        try {
+            String sql = "SELECT inscripcion.idInscripto, alumno.nombre AS nombre_alumno, materia.nombre AS nombre_materia, inscripcion.nota "
+                    + "FROM inscripcion "
+                    + "INNER JOIN alumno ON inscripcion.idAlumno = alumno.idAlumno "
+                    + "INNER JOIN materia ON inscripcion.idMateria = materia.idMateria "
+                    + "WHERE inscripcion.idAlumno = ?;";
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            System.out.println("hasta aca funciona? ayudame san GPT");
+            while (rs.next()) {
+                Inscripcion inscripcion = new Inscripcion();
+                inscripcion.setIdInscripcion(rs.getInt("idInscripto"));
+                inscripcion.setIdInscripcion(rs.getInt("idAlumno"));
+                inscripcion.setIdInscripcion(rs.getInt("idMateria"));
+                inscripcion.setIdInscripcion(rs.getInt("nota"));
+                inscripciones.add(inscripcion);
+                System.out.println("hola?");
+                JOptionPane.showMessageDialog(null, "Inscripciones listadas");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return inscripciones;
+    }
+
     public List<Materia> obtenerMateriasCursadas(int id) {
         List<Materia> materias = new ArrayList<>();
         try {
@@ -69,6 +114,7 @@ public class InscripcionData {
         }
         return materias;
     }
+
     public List<Materia> obtenerMateriasNOCursadas(int id) {
         List<Materia> materias = new ArrayList<Materia>();
         try {
@@ -91,6 +137,21 @@ public class InscripcionData {
     }
 
     public void borrarInscripcionMateriaAlumno(int idAlumno, int idMateria) {
+        String sql = "DELETE FROM inscripcion WHERE idAlumno = ? AND idMateria = ?";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idAlumno);
+            ps.setInt(2, idMateria);
+            int exito = ps.executeUpdate();
+            if (exito == 1) {
+                JOptionPane.showMessageDialog(null, "Inscripción eliminada con éxito");
+            } else {
+                JOptionPane.showMessageDialog(null, "No se pudo eliminar la inscripción");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
 
     }
 
@@ -117,13 +178,13 @@ public class InscripcionData {
     }
 
     public List<Alumno> obtenerAlumnosXMateria(int idMateria) {
-         List<Alumno> alu = new ArrayList<>();
-         try{
-         String sql ="SELECT inscripcion.idAlumno FROM inscripcion JOIN alumno "
-                 + "ON (inscripcion.idAlumno=alumno.idAlumno) WHERE inscripcion.idMateria=?";
-         PreparedStatement ps = con.prepareStatement(sql);
-         
-           ps.setInt(1, idMateria);
+        List<Alumno> alu = new ArrayList<>();
+        try {
+            String sql = "SELECT inscripcion.idAlumno FROM inscripcion JOIN alumno "
+                    + "ON (inscripcion.idAlumno=alumno.idAlumno) WHERE inscripcion.idMateria=?";
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setInt(1, idMateria);
             ResultSet rs = ps.executeQuery();
             Alumno al = new Alumno();
             while (rs.next()) {
@@ -133,7 +194,7 @@ public class InscripcionData {
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al obtener la materia");
-        }        
+        }
         return alu;
     }
 }

@@ -22,7 +22,7 @@ public class NewMain {
 //        mate.guardarMateria(mat);
 //        mate.guardarMateria(mat1);
 //        mate.guardarMateria(mat2);
-       // mate.guardarMateria(mat3);
+        // mate.guardarMateria(mat3);
 //////////////////////////////////////////////////
 //mate.eliminarMateria(3);
 
@@ -37,8 +37,7 @@ public class NewMain {
             System.out.println("Año en que se cursa: " + materias.getAnio());
             System.out.println("********************");*/
         // AlumnoData alu = new AlumnoData();
-       
-       /* Alumno a2 = new Alumno(222, "Pérez", "Pablo", LocalDate.of(2001, 05, 25), true);
+        /* Alumno a2 = new Alumno(222, "Pérez", "Pablo", LocalDate.of(2001, 05, 25), true);
         Alumno a3 = new Alumno(333, "Pérez", "carlos", LocalDate.of(2001, 05, 25), true);
         Alumno a6 = new Alumno(444, "Pérez", "josue", LocalDate.of(2001, 05, 25), true);
         Alumno a4 = new Alumno(555, "Pérez", "Joséf", LocalDate.of(2001, 05, 25), true);*/
@@ -64,11 +63,11 @@ public class NewMain {
            System.out.println(alumno.getNombre());
            System.out.println(alumno.getFechaNac());
            System.out.println("********************");*/
-           //MateriaData mm1 = new MateriaData();
-      //   mm1.guardarMateria(m1);
-      ////////////////////////////
-      ////LLAMAR AL ALUMNO SEGUN SU ID Y A LA MATERIA SEGUN SU ID PARA HACER LA
-      ////INSCRIPCION DE LA NOTA POR ALUMNO Y POR MATERIA
+        //MateriaData mm1 = new MateriaData();
+        //   mm1.guardarMateria(m1);
+        ////////////////////////////
+        ////LLAMAR AL ALUMNO SEGUN SU ID Y A LA MATERIA SEGUN SU ID PARA HACER LA
+        ////INSCRIPCION DE LA NOTA POR ALUMNO Y POR MATERIA
 //        Alumno a6 = new Alumno(1);
 //        Materia m1;
 //        m1 = new Materia(4);
@@ -77,9 +76,8 @@ public class NewMain {
 //        in.guardarInscripcion(insc);
         ////////////////////////////////////////////
 //        in.actualizarNota(1, 6, 1, 4);
-       // in.obtenerMateriasCursadas(1);
-       
-       /* Inscripcion insc = new Inscripcion();
+        // in.obtenerMateriasCursadas(1);
+        /* Inscripcion insc = new Inscripcion();
         InscripcionData in = new InscripcionData();
          for (Materia materias : in.obtenerMateriasCursadas(1)) {
             System.out.println("Materia cursada: " + materias.getNombre());
@@ -95,13 +93,21 @@ public class NewMain {
 //            System.out.println("Id de la materia: " + materias.getIdMateria());
 //       
 //            System.out.println("********************");
-    Inscripcion insc = new Inscripcion();
+        Inscripcion insc = new Inscripcion();
         InscripcionData in = new InscripcionData();
-         for (Alumno alu : in.obtenerAlumnosXMateria(3)) {
-           // System.out.println("Materia cursada: " + alumno.getNombre());
-            //System.out.println("Año de cursada: " + materias.getAnio());
-            System.out.println("Id del Alumno: " + alu.getIdAlumno());
-       
+//         for (Alumno alu : in.obtenerAlumnosXMateria(3)) {
+//           // System.out.println("Materia cursada: " + alumno.getNombre());
+//            //System.out.println("Año de cursada: " + materias.getAnio());
+//            System.out.println("Id del Alumno: " + alu.getIdAlumno());
+//       
+//            System.out.println("********************");
+//
+//        }
+        for (Inscripcion inscripciones : in.obtenerInscripcionesPorAlumno(1)) {
+            System.out.println("ID inscripción: " + inscripciones.getIdInscripcion() + "\n");
+            System.out.println("nota: " + inscripciones.getNota() + "\n");
+            System.out.println("alumno: " + inscripciones.getAlumno().nombre + "\n");
+            System.out.println("ID alumno: " + inscripciones.getAlumno().idAlumno + "\n");
             System.out.println("********************");
 
         }
