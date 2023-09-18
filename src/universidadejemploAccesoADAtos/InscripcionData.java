@@ -196,5 +196,6 @@ public class InscripcionData {
             JOptionPane.showMessageDialog(null, "Error al obtener la materia");
         }
         return alu;
+        
     }
 }
