@@ -106,8 +106,8 @@ public class NewMain {
         for (Inscripcion inscripciones : in.obtenerInscripcionesPorAlumno(1)) {
             System.out.println("ID inscripción: " + inscripciones.getIdInscripcion() + "\n");
             System.out.println("nota: " + inscripciones.getNota() + "\n");
-            System.out.println("alumno: " + inscripciones.getAlumno().nombre + "\n");
-            System.out.println("ID alumno: " + inscripciones.getAlumno().idAlumno + "\n");
+            System.out.println("alumno: " +inscripciones.getAlumno());
+           // System.out.println("ID alumno: " + inscripciones.getAlumno().idAlumno + "\n");
             System.out.println("********************");
 
         }

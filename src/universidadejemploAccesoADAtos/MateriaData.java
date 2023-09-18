@@ -15,11 +15,12 @@ public class MateriaData {
     public MateriaData() {
         con = Conexion.getConexion();
     }
-
+    
+    
+    PreparedStatement ps;
     public void guardarMateria(Materia materia) {
         String sql = "INSERT INTO materia (nombre, anio, estado)"
                 + "VALUES (?,?,?)";
-        PreparedStatement ps;
         try {
             ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, materia.getNombre());
@@ -40,8 +41,8 @@ public class MateriaData {
 
     public void eliminarMateria(int id) {
         String sql = "UPDATE materia SET estado = 0 WHERE idMateria = ?";
-
-        try (PreparedStatement ps = con.prepareStatement(sql)) {
+        try {
+            ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             int exito = ps.executeUpdate();
             if (exito == 1) {
@@ -54,8 +55,6 @@ public class MateriaData {
 
     public void modificarMateria(Materia materia) {
         String sql = "UPDATE materia SET nombre=?, anio=?, estado=? WHERE idMateria = ?";
-        //  System.out.println(sql);
-        PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, materia.getNombre());
@@ -78,7 +77,7 @@ public class MateriaData {
         String sql = "SELECT nombre, anio FROM materia WHERE idMateria = ? AND estado = 1";
         Materia materia = null;
         try {
-            PreparedStatement ps = con.prepareStatement(sql);
+            ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -104,7 +103,7 @@ public class MateriaData {
         String sql = "SELECT idMateria, nombre, anio FROM materia WHERE estado = 1";
         ArrayList<Materia> materias = new ArrayList<>();
         try {
-            PreparedStatement ps = con.prepareStatement(sql);
+            ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
