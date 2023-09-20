@@ -66,9 +66,8 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1000, 700));
+        setResizable(false);
         getContentPane().setLayout(null);
-
-        jLabel14.setIcon(new javax.swing.ImageIcon("D:\\Downloads\\logo-universidad-de-la-punta.png")); // NOI18N
 
         jLabel15.setFont(new java.awt.Font("Nirmala UI", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 51, 153));
@@ -85,10 +84,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("D:\\Downloads\\307-3076978_icono-persona-png-transparent-png.png")); // NOI18N
-
-        jLabel17.setIcon(new javax.swing.ImageIcon("D:\\Downloads\\book_PNG51109.png")); // NOI18N
-
         botonMateria2.setBackground(new java.awt.Color(255, 255, 255));
         botonMateria2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         botonMateria2.setForeground(new java.awt.Color(0, 51, 153));
@@ -100,8 +95,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\francisco\\Pictures\\inscripcionn.png")); // NOI18N
-
         botonConsulta2.setBackground(new java.awt.Color(255, 255, 255));
         botonConsulta2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         botonConsulta2.setForeground(new java.awt.Color(0, 51, 153));
@@ -111,8 +104,6 @@ public class Principal extends javax.swing.JFrame {
                 botonConsultaActionPerformed(evt);
             }
         });
-
-        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\francisco\\Documents\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\kisspng-computer-icons-icon-design-business-administration-admin-icon-5b46fc46cb14d0.3170199515313787588318 (1).png")); // NOI18N
 
         botonAdmin2.setBackground(new java.awt.Color(255, 255, 255));
         botonAdmin2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
@@ -297,44 +288,20 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button botonAdmin;
-    private java.awt.Button botonAdmin1;
     private java.awt.Button botonAdmin2;
-    private java.awt.Button botonAlumno;
-    private java.awt.Button botonAlumno1;
     private java.awt.Button botonAlumno2;
-    private java.awt.Button botonConsulta;
-    private java.awt.Button botonConsulta1;
     private java.awt.Button botonConsulta2;
-    private java.awt.Button botonMateria;
-    private java.awt.Button botonMateria1;
     private java.awt.Button botonMateria2;
-    private java.awt.Button botonSalir;
-    private java.awt.Button botonSalir1;
     private java.awt.Button botonSalir2;
     private java.awt.Button button1;
-    private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JDesktopPane jDesktopPane3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
