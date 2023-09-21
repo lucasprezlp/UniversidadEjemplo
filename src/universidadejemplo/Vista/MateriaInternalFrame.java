@@ -5,6 +5,7 @@
  */
 package universidadejemplo.Vista;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 
@@ -22,6 +23,8 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 400);
                 jPBG1.setPreferredSize(new Dimension(300, 200));
+                getContentPane().setLayout(new BorderLayout());
+getContentPane().add(jPBG1, BorderLayout.CENTER);
     }
 
     /**
