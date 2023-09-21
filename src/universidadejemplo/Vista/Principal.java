@@ -5,6 +5,8 @@
  */
 package universidadejemplo.Vista;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
@@ -66,11 +68,12 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1000, 700));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jDesktopPane3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon("D:\\Downloads\\logo-universidad-de-la-punta.png")); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\francisco\\Documents\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\logo-universidad-de-la-punta.png")); // NOI18N
 
         jLabel15.setFont(new java.awt.Font("Nirmala UI", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 51, 153));
@@ -87,9 +90,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("D:\\Downloads\\307-3076978_icono-persona-png-transparent-png.png")); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\francisco\\Documents\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\307-3076978_icono-persona-png-transparent-png (1).png")); // NOI18N
 
-        jLabel17.setIcon(new javax.swing.ImageIcon("D:\\Downloads\\book_PNG51109.png")); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\francisco\\Documents\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\book_PNG51109 (1).png")); // NOI18N
 
         botonMateria2.setBackground(new java.awt.Color(255, 255, 255));
         botonMateria2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
@@ -102,7 +105,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\francisco\\Pictures\\inscripcionn.png")); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\francisco\\Documents\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\inscripcionn.png")); // NOI18N
 
         botonConsulta2.setBackground(new java.awt.Color(255, 255, 255));
         botonConsulta2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
@@ -184,7 +187,7 @@ public class Principal extends javax.swing.JFrame {
         jDesktopPane3Layout.setVerticalGroup(
             jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane3Layout.createSequentialGroup()
-                .addContainerGap(143, Short.MAX_VALUE)
+                .addContainerGap(140, Short.MAX_VALUE)
                 .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel19)
@@ -253,7 +256,7 @@ public class Principal extends javax.swing.JFrame {
         uno.setVisible(true);
         jDesktopPane3.add(uno);
         jDesktopPane3.moveToFront(uno);
-        
+
     }//GEN-LAST:event_botonMateriaActionPerformed
 
     private void botonAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAlumnoActionPerformed
