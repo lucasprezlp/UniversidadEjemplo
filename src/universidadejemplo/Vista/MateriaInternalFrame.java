@@ -62,7 +62,6 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
         jPTituloMateria.setForeground(new java.awt.Color(0, 153, 102));
 
         jLTitulo.setBackground(new java.awt.Color(0, 0, 0));
-        jLTitulo.setForeground(new java.awt.Color(0, 0, 0));
         jLTitulo.setText("MATERIA");
 
         javax.swing.GroupLayout jPTituloMateriaLayout = new javax.swing.GroupLayout(jPTituloMateria);
@@ -82,28 +81,19 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jLCodigo.setForeground(new java.awt.Color(0, 0, 0));
         jLCodigo.setText("Código:");
 
-        jTCódigo.setText("jTextField1");
         jTCódigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTCódigoActionPerformed(evt);
             }
         });
 
-        jLNombre.setForeground(new java.awt.Color(0, 0, 0));
         jLNombre.setText("Nombre: ");
 
-        jLAño.setForeground(new java.awt.Color(0, 0, 0));
         jLAño.setText("Año:");
 
-        jLEstado.setForeground(new java.awt.Color(0, 0, 0));
         jLEstado.setText("Estado:");
-
-        jTNombre.setText("jTextField2");
-
-        jTAño.setText("jTextField3");
 
         jRBEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,11 +136,11 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
                                 .addGap(31, 31, 31)
                                 .addGroup(jPBG1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPBG1Layout.createSequentialGroup()
-                                        .addGroup(jPBG1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTCódigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTAño)
-                                            .addComponent(jRBEstado))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                                        .addGroup(jPBG1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jRBEstado)
+                                            .addComponent(jTCódigo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTAño, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jBBuscar)
                                         .addGap(23, 23, 23))
                                     .addGroup(jPBG1Layout.createSequentialGroup()
@@ -159,7 +149,7 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
                                             .addComponent(jTNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 0, Short.MAX_VALUE))))))
                     .addGroup(jPBG1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(231, Short.MAX_VALUE)
                         .addComponent(jBGuardar)
                         .addGap(30, 30, 30)
                         .addComponent(jBSalir)))
@@ -187,7 +177,7 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
                 .addGroup(jPBG1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLEstado)
                     .addComponent(jRBEstado))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(jPBG1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBNuevo)
                     .addComponent(jBEliminar)

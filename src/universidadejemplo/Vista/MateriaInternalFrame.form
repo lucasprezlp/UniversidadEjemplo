@@ -61,12 +61,12 @@
                                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jTCódigo" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTAño" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jRBEstado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jTCódigo" min="-2" pref="81" max="-2" attributes="0"/>
+                                              <Component id="jTAño" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="89" max="32767" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                           <Component id="jBBuscar" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                       </Group>
@@ -82,7 +82,7 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="231" max="32767" attributes="0"/>
                           <Component id="jBGuardar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="jBSalir" min="-2" max="-2" attributes="0"/>
@@ -118,7 +118,7 @@
                       <Component id="jLEstado" min="-2" max="-2" attributes="0"/>
                       <Component id="jRBEstado" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                  <EmptySpace pref="57" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jBNuevo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jBEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -167,9 +167,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="MATERIA"/>
               </Properties>
             </Component>
@@ -177,53 +174,32 @@
         </Container>
         <Component class="javax.swing.JLabel" name="jLCodigo">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTC&#xf3;digo">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField1"/>
-          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTC&#xf3;digoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLNombre">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Nombre: "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLA&#xf1;o">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="A&#xf1;o:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLEstado">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Estado:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTNombre">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField2"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTA&#xf1;o">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField3"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JRadioButton" name="jRBEstado">
           <Events>
