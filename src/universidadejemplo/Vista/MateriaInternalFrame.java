@@ -21,7 +21,7 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
     public MateriaInternalFrame() {
         initComponents();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 400);
+        setSize(400, 500);
                 jPBG1.setPreferredSize(new Dimension(300, 200));
                 getContentPane().setLayout(new BorderLayout());
 getContentPane().add(jPBG1, BorderLayout.CENTER);

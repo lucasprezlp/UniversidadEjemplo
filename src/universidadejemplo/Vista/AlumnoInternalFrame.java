@@ -5,6 +5,10 @@
  */
 package universidadejemplo.Vista;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import javax.swing.JFrame;
+
 /**
  *
  * @author francisco
@@ -16,6 +20,17 @@ public class AlumnoInternalFrame extends javax.swing.JInternalFrame {
      */
     public AlumnoInternalFrame() {
         initComponents();
+        
+        
+        
+         
+        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(500, 600);
+        
+//                jPanel2.setPreferredSize(new Dimension(800, 450));
+                getContentPane().setLayout(new BorderLayout());
+getContentPane().add(jPanel2, BorderLayout.CENTER);
         
     }
 
@@ -58,9 +73,12 @@ public class AlumnoInternalFrame extends javax.swing.JInternalFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        setClosable(true);
         setTitle("Alumnos");
         setPreferredSize(new java.awt.Dimension(500, 800));
         getContentPane().setLayout(null);
+
+        jPanel2.setMinimumSize(new java.awt.Dimension(800, 450));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
@@ -172,7 +190,7 @@ public class AlumnoInternalFrame extends javax.swing.JInternalFrame {
                         .addGap(30, 30, 30)
                         .addComponent(jButton4))
                     .addComponent(jLabel6))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(333, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
@@ -216,7 +234,7 @@ public class AlumnoInternalFrame extends javax.swing.JInternalFrame {
         );
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 0, 520, 460);
+        jPanel2.setBounds(0, 0, 800, 460);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

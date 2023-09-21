@@ -41,6 +41,8 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
         button1 = new java.awt.Button();
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jMenu1 = new javax.swing.JMenu();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jDesktopPane3 = new javax.swing.JDesktopPane();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -69,6 +71,11 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        jMenu1.setText("jMenu1");
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1000, 700));
         setResizable(false);
@@ -77,8 +84,6 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
         jDesktopPane3.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPane3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jDesktopPane3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\francisco\\Documents\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\logo-universidad-de-la-punta.png")); // NOI18N
 
         jLabel15.setFont(new java.awt.Font("Nirmala UI", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 51, 153));
@@ -95,10 +100,6 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
             }
         });
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\francisco\\Documents\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\307-3076978_icono-persona-png-transparent-png (1).png")); // NOI18N
-
-        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\francisco\\Documents\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\book_PNG51109 (1).png")); // NOI18N
-
         botonMateria2.setBackground(new java.awt.Color(255, 255, 255));
         botonMateria2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         botonMateria2.setForeground(new java.awt.Color(0, 51, 153));
@@ -110,8 +111,6 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
             }
         });
 
-        jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\francisco\\Documents\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\inscripcionn.png")); // NOI18N
-
         botonConsulta2.setBackground(new java.awt.Color(255, 255, 255));
         botonConsulta2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         botonConsulta2.setForeground(new java.awt.Color(0, 51, 153));
@@ -121,8 +120,6 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
                 botonConsultaActionPerformed(evt);
             }
         });
-
-        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\francisco\\Documents\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\kisspng-computer-icons-icon-design-business-administration-admin-icon-5b46fc46cb14d0.3170199515313787588318 (1).png")); // NOI18N
 
         botonAdmin2.setBackground(new java.awt.Color(255, 255, 255));
         botonAdmin2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
@@ -322,6 +319,8 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
