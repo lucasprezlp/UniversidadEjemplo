@@ -59,7 +59,6 @@ public class Principal extends javax.swing.JFrame {
         botonConsulta2 = new java.awt.Button();
         jLabel19 = new javax.swing.JLabel();
         botonAdmin2 = new java.awt.Button();
-        botonSalir2 = new java.awt.Button();
 
         button1.setLabel("button1");
 
@@ -105,10 +104,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\veroc\\OneDrive\\Documentos\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\307-3076978_icono-persona-png-transparent-png (1).png")); // NOI18N
-
-        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\veroc\\OneDrive\\Documentos\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\book_PNG51109 (1).png")); // NOI18N
-
         botonMateria2.setBackground(new java.awt.Color(255, 255, 255));
         botonMateria2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         botonMateria2.setForeground(new java.awt.Color(0, 51, 153));
@@ -120,8 +115,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\veroc\\OneDrive\\Documentos\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\inscripcionn.png")); // NOI18N
-
         botonConsulta2.setBackground(new java.awt.Color(255, 255, 255));
         botonConsulta2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         botonConsulta2.setForeground(new java.awt.Color(0, 51, 153));
@@ -132,8 +125,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\veroc\\OneDrive\\Documentos\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\kisspng-computer-icons-icon-design-business-administration-admin-icon-5b46fc46cb14d0.3170199515313787588318 (1).png")); // NOI18N
-
         botonAdmin2.setBackground(new java.awt.Color(255, 255, 255));
         botonAdmin2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         botonAdmin2.setForeground(new java.awt.Color(0, 51, 153));
@@ -141,15 +132,6 @@ public class Principal extends javax.swing.JFrame {
         botonAdmin2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAdminActionPerformed(evt);
-            }
-        });
-
-        botonSalir2.setBackground(new java.awt.Color(255, 255, 255));
-        botonSalir2.setForeground(new java.awt.Color(255, 0, 0));
-        botonSalir2.setLabel("SALIR");
-        botonSalir2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonSalirActionPerformed(evt);
             }
         });
 
@@ -163,7 +145,6 @@ public class Principal extends javax.swing.JFrame {
         jDesktopPane3.setLayer(botonConsulta2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane3.setLayer(jLabel19, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane3.setLayer(botonAdmin2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane3.setLayer(botonSalir2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane3Layout = new javax.swing.GroupLayout(jDesktopPane3);
         jDesktopPane3.setLayout(jDesktopPane3Layout);
@@ -180,29 +161,23 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(botonAlumno2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonMateria2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 271, Short.MAX_VALUE)
                 .addComponent(jLabel19)
                 .addGap(18, 18, 18)
                 .addComponent(botonAdmin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(88, 88, 88))
             .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jDesktopPane3Layout.createSequentialGroup()
-                    .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane3Layout.createSequentialGroup()
-                            .addGap(236, 236, 236)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(112, 112, 112)
-                            .addComponent(jLabel14)
-                            .addGap(43, 43, 43))
-                        .addGroup(jDesktopPane3Layout.createSequentialGroup()
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botonSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap()))
+                    .addGap(236, 236, 236)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(112, 112, 112)
+                    .addComponent(jLabel14)
+                    .addGap(53, 53, 53)))
         );
         jDesktopPane3Layout.setVerticalGroup(
             jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel19)
@@ -228,9 +203,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel14))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 358, Short.MAX_VALUE)
-                    .addComponent(botonSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
+                    .addContainerGap(440, Short.MAX_VALUE)))
         );
 
         getContentPane().add(jDesktopPane3);
@@ -238,10 +211,6 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonSalirActionPerformed
 
     private void botonAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAdminActionPerformed
         // TODO add your handling code here:
@@ -322,7 +291,6 @@ public class Principal extends javax.swing.JFrame {
     private java.awt.Button botonAlumno2;
     private java.awt.Button botonConsulta2;
     private java.awt.Button botonMateria2;
-    private java.awt.Button botonSalir2;
     private java.awt.Button button1;
     private javax.swing.JDesktopPane jDesktopPane3;
     private javax.swing.JLabel jLabel14;

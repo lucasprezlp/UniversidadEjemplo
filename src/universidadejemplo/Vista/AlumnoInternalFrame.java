@@ -60,7 +60,6 @@ getContentPane().add(jPanel2, BorderLayout.CENTER);
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -173,10 +172,8 @@ getContentPane().add(jPanel2, BorderLayout.CENTER);
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Buscar))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton1))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(jRadioButton1)
+                        .addGap(0, 449, Short.MAX_VALUE)))
                 .addGap(51, 51, 51))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(61, 61, 61)
@@ -221,20 +218,18 @@ getContentPane().add(jPanel2, BorderLayout.CENTER);
                         .addComponent(jLabel5))
                     .addComponent(jRadioButton1))
                 .addGap(37, 37, 37)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel6)
                 .addGap(43, 43, 43)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(0, 0, 800, 460);
+        jPanel2.setBounds(0, 0, 790, 460);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -258,7 +253,6 @@ getContentPane().add(jPanel2, BorderLayout.CENTER);
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

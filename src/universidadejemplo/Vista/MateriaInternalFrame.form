@@ -6,6 +6,7 @@
       <Color blue="66" green="ff" red="66" type="rgb"/>
     </Property>
     <Property name="closable" type="boolean" value="true"/>
+    <Property name="defaultCloseOperation" type="int" value="1"/>
     <Property name="resizable" type="boolean" value="true"/>
     <Property name="title" type="java.lang.String" value="MATERIA"/>
   </Properties>
@@ -218,6 +219,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Nuevo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBNuevoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jBEliminar">
           <Properties>
@@ -228,11 +232,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Guardar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBGuardarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jBSalir">
           <Properties>
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBSalirActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
