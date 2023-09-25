@@ -7,6 +7,9 @@ package universidadejemplo.Vista;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
@@ -18,14 +21,16 @@ import javax.swing.JPanel;
  * @author francisco
  */
 public class Principal extends javax.swing.JFrame {
-
+ FondoPanel fondo=new FondoPanel();
     /**
      * Creates new form Principal
      */
     public Principal() {
+        this.setContentPane(fondo);
         initComponents();
-       getContentPane().setLayout(new BorderLayout());
-getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
+
+    //  getContentPane().setLayout(new BorderLayout());
+//getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
 
     }
 
@@ -77,13 +82,13 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 700));
-        setResizable(false);
+        setMinimumSize(new java.awt.Dimension(1000, 1200));
         getContentPane().setLayout(null);
 
         jDesktopPane3.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPane3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jDesktopPane3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jDesktopPane3.setMinimumSize(new java.awt.Dimension(500, 520));
 
         jLabel15.setFont(new java.awt.Font("Nirmala UI", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 51, 153));
@@ -100,6 +105,10 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
             }
         });
 
+        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\veroc\\OneDrive\\Documentos\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\307-3076978_icono-persona-png-transparent-png (1).png")); // NOI18N
+
+        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\veroc\\OneDrive\\Documentos\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\book_PNG51109 (1).png")); // NOI18N
+
         botonMateria2.setBackground(new java.awt.Color(255, 255, 255));
         botonMateria2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         botonMateria2.setForeground(new java.awt.Color(0, 51, 153));
@@ -111,6 +120,8 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
             }
         });
 
+        jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\veroc\\OneDrive\\Documentos\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\inscripcionn.png")); // NOI18N
+
         botonConsulta2.setBackground(new java.awt.Color(255, 255, 255));
         botonConsulta2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         botonConsulta2.setForeground(new java.awt.Color(0, 51, 153));
@@ -120,6 +131,8 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
                 botonConsultaActionPerformed(evt);
             }
         });
+
+        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\veroc\\OneDrive\\Documentos\\GitHub\\UniversidadEjemplo\\src\\universidad.Imagenes\\kisspng-computer-icons-icon-design-business-administration-admin-icon-5b46fc46cb14d0.3170199515313787588318 (1).png")); // NOI18N
 
         botonAdmin2.setBackground(new java.awt.Color(255, 255, 255));
         botonAdmin2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
@@ -167,7 +180,7 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
                     .addComponent(botonAlumno2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonMateria2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonConsulta2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 365, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addComponent(jLabel19)
                 .addGap(18, 18, 18)
                 .addComponent(botonAdmin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -177,7 +190,7 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
                     .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane3Layout.createSequentialGroup()
                             .addGap(236, 236, 236)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGap(112, 112, 112)
                             .addComponent(jLabel14)
                             .addGap(43, 43, 43))
@@ -189,7 +202,7 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
         jDesktopPane3Layout.setVerticalGroup(
             jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane3Layout.createSequentialGroup()
-                .addContainerGap(134, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel19)
@@ -215,13 +228,13 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
                     .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel14))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 444, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 358, Short.MAX_VALUE)
                     .addComponent(botonSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
 
         getContentPane().add(jDesktopPane3);
-        jDesktopPane3.setBounds(0, 0, 980, 590);
+        jDesktopPane3.setBounds(130, 80, 690, 470);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -323,4 +336,15 @@ getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables
+class FondoPanel extends JPanel{
+    private Image imagen;
+    
+    @Override
+    public void paint(Graphics g){
+        imagen = new ImageIcon(getClass().getResource("/universidad.Imagenes/ULP.jpg")).getImage();
+        g.drawImage(imagen,0,0,getWidth(),getHeight(), this);
+        setOpaque(false);
+        super.paint(g);
+    }
+}
 }

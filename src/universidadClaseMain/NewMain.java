@@ -2,13 +2,8 @@ package universidadClaseMain;
 
 import java.sql.Connection;
 import java.time.LocalDate;
-import universidadejemplo.Entidades.Alumno;
-import universidadejemplo.Entidades.Inscripcion;
-import universidadejemplo.Entidades.Materia;
-import universidadejemploAccesoADAtos.AlumnoData;
-import universidadejemploAccesoADAtos.Conexion;
-import universidadejemploAccesoADAtos.InscripcionData;
-import universidadejemploAccesoADAtos.MateriaData;
+import universidadejemplo.Entidades.*;
+import universidadejemploAccesoADAtos.*;
 
 public class NewMain {
 
@@ -85,16 +80,16 @@ public class NewMain {
             System.out.println("Id de la materia: " + materias.getIdMateria());
        
             System.out.println("********************");*/
-//        Inscripcion insc = new Inscripcion();
-//        InscripcionData in = new InscripcionData();
-//         for (Materia materias : in.obtenerMateriasNOCursadas(1)) {
-//            System.out.println("Materia cursada: " + materias.getNombre());
-//            //System.out.println("Año de cursada: " + materias.getAnio());
-//            System.out.println("Id de la materia: " + materias.getIdMateria());
-//       
-//            System.out.println("********************");
         Inscripcion insc = new Inscripcion();
         InscripcionData in = new InscripcionData();
+         for (Materia materias : in.obtenerMateriasNOCursadas(1)) {
+            System.out.println("Materia cursada: " + materias.getNombre());
+            //System.out.println("Año de cursada: " + materias.getAnio());
+            System.out.println("Id de la materia: " + materias.getIdMateria());
+       
+            System.out.println("********************");
+        //Inscripcion insc = new Inscripcion();
+       // InscripcionData in = new InscripcionData();
 //         for (Alumno alu : in.obtenerAlumnosXMateria(3)) {
 //           // System.out.println("Materia cursada: " + alumno.getNombre());
 //            //System.out.println("Año de cursada: " + materias.getAnio());
@@ -103,13 +98,19 @@ public class NewMain {
 //            System.out.println("********************");
 //
 //        }
-        for (Inscripcion inscripciones : in.obtenerInscripcionesPorAlumno(1)) {
+        //in.borrarInscripcionMateriaAlumno(1, 3);
+       /*for (Inscripcion inscripciones : in.obtenerInscripcionesPorAlumno(1)) {
             System.out.println("ID inscripción: " + inscripciones.getIdInscripcion() + "\n");
             System.out.println("nota: " + inscripciones.getNota() + "\n");
             System.out.println("alumno: " +inscripciones.getAlumno());
            // System.out.println("ID alumno: " + inscripciones.getAlumno().idAlumno + "\n");
             System.out.println("********************");
 
-        }
+        }*/
+        /*for(Inscripcion inscripcion: in.obtenerInscripciones()){
+            System.out.println("id"+inscripcion.getIdInscripcion());
+            System.out.println("Nota"+inscripcion.getNota());
+        }*/
+    }
     }
 }

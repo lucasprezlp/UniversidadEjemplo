@@ -5,6 +5,10 @@
  */
 package universidadejemplo.Vista;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author francisco
@@ -16,6 +20,7 @@ public class InscripcionInternalFrame extends javax.swing.JInternalFrame {
      */
     public InscripcionInternalFrame() {
         initComponents();
+  
     }
 
     /**
@@ -29,8 +34,8 @@ public class InscripcionInternalFrame extends javax.swing.JInternalFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jBManipulaNota = new javax.swing.JButton();
+        jBManejaInscrip = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Formulario de Inscripcion");
@@ -39,56 +44,60 @@ public class InscripcionInternalFrame extends javax.swing.JInternalFrame {
 
         jLabel1.setText("ELEGIR LA OPCION DESEADA:");
 
-        jButton1.setText("Manipulacion de notas");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBManipulaNota.setText("Manipulacion de notas");
+        jBManipulaNota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jBManipulaNotaActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Manejo de inscripcion");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jBManejaInscrip.setText("Manejo de inscripcion");
+        jBManejaInscrip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jBManejaInscripActionPerformed(evt);
             }
         });
 
         jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jBManipulaNota, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jBManejaInscrip, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(54, 54, 54))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap(224, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(281, 281, 281))
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jBManipulaNota)
+                        .addGap(107, 107, 107)
+                        .addComponent(jBManejaInscrip))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(181, 181, 181)
+                        .addComponent(jLabel1)))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jBManipulaNota))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jBManejaInscrip)))
+                .addContainerGap(449, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jDesktopPane1)
                 .addContainerGap())
@@ -103,17 +112,18 @@ public class InscripcionInternalFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jBManipulaNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBManipulaNotaActionPerformed
         // TODO add your handling code here:
         ManejoNotas uno = new ManejoNotas();
         jDesktopPane1.removeAll();
         jDesktopPane1.repaint();
+        
         uno.setVisible(true);
         jDesktopPane1.add(uno);
         jDesktopPane1.moveToFront(uno);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jBManipulaNotaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jBManejaInscripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBManejaInscripActionPerformed
         // TODO add your handling code here:
         ManipulacionInscripcion uno = new ManipulacionInscripcion();
         jDesktopPane1.removeAll();
@@ -121,13 +131,17 @@ public class InscripcionInternalFrame extends javax.swing.JInternalFrame {
         uno.setVisible(true);
         jDesktopPane1.add(uno);
         jDesktopPane1.moveToFront(uno);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jBManejaInscripActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jBManejaInscrip;
+    private javax.swing.JButton jBManipulaNota;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    private void setLocationRelativoTo(Object object) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
