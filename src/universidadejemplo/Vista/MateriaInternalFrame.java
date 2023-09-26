@@ -16,7 +16,7 @@ import universidadejemplo.Entidades.Materia;
 import universidadejemploAccesoADAtos.AlumnoData;
 import universidadejemploAccesoADAtos.InscripcionData;
 import universidadejemploAccesoADAtos.MateriaData;
-
+import universidadejemplo.Vista.Principal;
 /**
  *
  * @author francisco
@@ -258,6 +258,7 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
         // TODO add your handling code here:
         dispose();
+        universidadejemplo.Vista.Principal
     }//GEN-LAST:event_jBSalirActionPerformed
 
     private void jBNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBNuevoActionPerformed
@@ -270,32 +271,63 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
         // TODO add your handling code here:
-        try {
-            Integer codigo = Integer.parseInt(jTCódigo.getText());
-            int id = codigo;
-            String nombre = jTNombre.getText();
-            int anio = (Integer.parseInt(jTAño.getText()));
-            if (nombre.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "No puede haber campos vacios");
-                return;
-            }
-            Boolean estado = jRBEstado.isSelected();
-            if (materiaActual == null) {
-                materiaActual = new Materia(nombre, anio, estado);
-                mData.guardarMateria(materiaActual);
-            } else {
-                 materiaActual.setIdMateria(Integer.parseInt(jLCodigo.getText()));
-               
-                   // materiaActual.getIdMateria();
-                    materiaActual.setNombre(nombre);
-                    materiaActual.setAnio(anio);
-                    materiaActual.setActivo(estado);
-                    mData.modificarMateria(materiaActual);
-                
-            }
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Ingrese un codigo valido");
+         try {
+        Integer codigo = Integer.parseInt(jTCódigo.getText());
+        String nombre = jTNombre.getText();
+        int anio = Integer.parseInt(jTAño.getText());
+        if (nombre.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No puede haber campos vacíos");
+            return;
         }
+        Boolean estado = jRBEstado.isSelected();
+        
+        // Buscar la materia por código en la base de datos
+        Materia materiaExistente = mData.buscarMateria(codigo);
+        
+        if (materiaExistente == null) {
+            // Si la materia no existe, crear una nueva
+            materiaActual = new Materia(codigo, nombre, anio, estado);
+            mData.guardarMateria(materiaActual); // Reemplaza mData con tu lógica de guardado en la base de datos
+            JOptionPane.showMessageDialog(this, "Materia agregada con éxito.");
+        } else {
+            // Si la materia ya existe, actualizar sus datos
+            materiaActual.setIdMateria(codigo);
+            materiaActual.setNombre(nombre);
+            materiaActual.setAnio(anio);
+            materiaActual.setActivo(estado);
+            mData.modificarMateria(materiaActual); // Reemplaza mData con tu lógica de actualización en la base de datos
+            JOptionPane.showMessageDialog(this, "Datos de la materia actualizados con éxito.");
+        }
+        
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "El código y el año deben ser números válidos.");
+    }
+//        try {
+//            Integer codigo = Integer.parseInt(jTCódigo.getText());
+//            int id = codigo;
+//            String nombre = jTNombre.getText();
+//            int anio = (Integer.parseInt(jTAño.getText()));
+//            if (nombre.isEmpty()) {
+//                JOptionPane.showMessageDialog(this, "No puede haber campos vacios");
+//                return;
+//            }
+//            Boolean estado = jRBEstado.isSelected();
+//            if (materiaActual == null) {
+//                materiaActual = new Materia(nombre, anio, estado);
+//                mData.guardarMateria(materiaActual);
+//            } else {
+//                 materiaActual.setIdMateria(Integer.parseInt(jLCodigo.getText()));
+//               
+//                   // materiaActual.getIdMateria();
+//                    materiaActual.setNombre(nombre);
+//                    materiaActual.setAnio(anio);
+//                    materiaActual.setActivo(estado);
+//                    mData.modificarMateria(materiaActual);
+//                
+//            }
+//        } catch (NumberFormatException ex) {
+//            JOptionPane.showMessageDialog(this, "Ingrese un codigo valido");
+//        }
     }//GEN-LAST:event_jBGuardarActionPerformed
 
     private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
