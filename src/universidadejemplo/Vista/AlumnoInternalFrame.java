@@ -351,7 +351,7 @@ getContentPane().add(jPanel2, BorderLayout.CENTER);
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
         dispose();
-        
+        principalMostrarFondo();
      
         // TODO add your handling code here:
     }//GEN-LAST:event_jbSalirActionPerformed
@@ -364,6 +364,10 @@ getContentPane().add(jPanel2, BorderLayout.CENTER);
         jcfechaNac.setDate(Date.valueOf(LocalDate.now()));
     }
     
+    private void principalMostrarFondo() {
+        Principal imagen = new Principal();
+        imagen.show();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Buscar;

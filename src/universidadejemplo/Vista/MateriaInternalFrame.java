@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import universidadejemplo.Entidades.Alumno;
 import universidadejemplo.Entidades.Materia;
+import universidadejemplo.Vista.Principal.FondoPanel;
 import universidadejemploAccesoADAtos.AlumnoData;
 import universidadejemploAccesoADAtos.InscripcionData;
 import universidadejemploAccesoADAtos.MateriaData;
@@ -256,9 +257,11 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jBBuscarActionPerformed
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
-        // TODO add your handling code here:
+      
         dispose();
-        universidadejemplo.Vista.Principal
+        principalMostrarFondo();
+       
+
     }//GEN-LAST:event_jBSalirActionPerformed
 
     private void jBNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBNuevoActionPerformed
@@ -361,4 +364,11 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTCódigo;
     private javax.swing.JTextField jTNombre;
     // End of variables declaration//GEN-END:variables
+
+    private void principalMostrarFondo() {
+//         FondoPanel fondo=new FondoPanel();
+//          jDesktopPane3.moveToFront(fondo);
+        Principal imagen = new Principal();
+        imagen.show();
+    }
 }

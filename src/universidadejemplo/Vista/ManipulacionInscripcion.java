@@ -210,8 +210,10 @@ public class ManipulacionInscripcion extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jBAInscripcionActionPerformed
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
-        // TODO add your handling code here:
-                dispose();
+ 
+        dispose();
+        principalMostrarFondo();
+  
     }//GEN-LAST:event_jBSalirActionPerformed
 
 
@@ -228,7 +230,8 @@ public class ManipulacionInscripcion extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton jrbMateInscrip;
     private javax.swing.JRadioButton jrbMateNOInscrip;
     // End of variables declaration//GEN-END:variables
-private void cargarAlumnos() {
+
+     private void cargarAlumnos() {
         for (Alumno item : listaA) {
             jcbAlumno.addItem(item);
         }
@@ -270,4 +273,8 @@ private void cargarAlumnos() {
             modelo.addRow(new Object[]{m.getIdMateria(), m.getNombre(), m.getAnio()});
     }
 }
+       private void principalMostrarFondo() {
+        Principal imagen = new Principal();
+        imagen.show();
+    }
 }

@@ -133,6 +133,7 @@ public class ConsultaInternalFrame extends javax.swing.JInternalFrame {
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
         dispose();
+        principalMostrarFondo();
     }//GEN-LAST:event_jbSalirActionPerformed
 
     private void jcbMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMateriaActionPerformed
@@ -140,9 +141,9 @@ public class ConsultaInternalFrame extends javax.swing.JInternalFrame {
        
        int filaSeleccionada=jtID.getSelectedRow();
        int indice = modelo.getRowCount() - 1;
-        for (int i = indice; i >= 0; i--) {
-            modelo.setValueAt(a.getIdAlumno(),a.getDni(),a.getApellido(),a.getNombre());
-        }
+//        for (int i = indice; i >= 0; i--) {
+//            modelo.setValueAt(a.getIdAlumno(),a.getDni(),a.getApellido(),a.getNombre());
+//        }
     }//GEN-LAST:event_jcbMateriaActionPerformed
 
     private void jcbMateriaAncestorRemoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jcbMateriaAncestorRemoved
@@ -185,5 +186,8 @@ public class ConsultaInternalFrame extends javax.swing.JInternalFrame {
         }
     }
     
-    
+    private void principalMostrarFondo() {
+        Principal imagen = new Principal();
+        imagen.show();
+    }
 }

@@ -239,7 +239,25 @@ public class Principal extends javax.swing.JFrame {
         jDesktopPane3.add(uno);
         jDesktopPane3.moveToFront(uno);
     }//GEN-LAST:event_botonConsultaActionPerformed
-
+    
+    
+    
+    
+    
+    
+    private void principalMostrarFondo(){
+        jDesktopPane3.moveToFront(fondo);
+        Principal imagen = new Principal();
+        imagen.show();
+       
+    }
+    
+    
+    
+    
+    
+    
+    
     private void botonMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMateriaActionPerformed
         // TODO add your handling code here:
         MateriaInternalFrame uno = new MateriaInternalFrame();

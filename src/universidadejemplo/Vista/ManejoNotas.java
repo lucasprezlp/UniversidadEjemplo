@@ -23,7 +23,7 @@ public class ManejoNotas extends javax.swing.JInternalFrame {
     modelo = new DefaultTableModel();
     inscData = new InscripcionData();
     listaA = aData.listarAlumno(); // Agrega esta línea para inicializar listaA
-    cargarAlumnos();
+   cargarAlumnos();
     armarCabeceraTable();
 }
 
@@ -48,12 +48,6 @@ public class ManejoNotas extends javax.swing.JInternalFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Seleccion de alumnos:");
-
-        jcbAlumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcbAlumnoActionPerformed(evt);
-            }
-        });
 
         jTableInscrip.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -131,35 +125,27 @@ public class ManejoNotas extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
-       Alumno selec = (Alumno)jcbAlumno.getSelectedItem();
-       
+     Alumno selec = (Alumno)jcbAlumno.getSelectedItem();
+//       Materia mate=
+//               
+//               
       List<Materia> listaMaterias = inscData.obtenerMateriasCursadas(selec.getIdAlumno());
         System.out.println(listaMaterias);
          for(Materia m: listaMaterias){
               
            modelo.addRow(new Object[]{m.getIdMateria(), m.getNombre(), m.getAnio()});  
-           
-        }
-      
-       //debe listar las materias en la tabla
-       //debe usar el actualizarNota(idInscripcion, idAlumno
-       //idMateria, dobule nota)
-       
-       
-       
-       
-       
+     
+         } 
+   
     }//GEN-LAST:event_jBGuardarActionPerformed
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
         // TODO add your handling code here:
-                dispose();
+       dispose();
+       principalMostrarFondo();
     }//GEN-LAST:event_jBSalirActionPerformed
 
-    private void jcbAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbAlumnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcbAlumnoActionPerformed
-
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBGuardar;
@@ -191,5 +177,9 @@ private void cargarAlumnos(){
         for (int i = indice; i >= 0; i--) {
             modelo.removeRow(i);
         }
+    }
+           private void principalMostrarFondo() {
+        Principal imagen = new Principal();
+        imagen.show();
     }
 }

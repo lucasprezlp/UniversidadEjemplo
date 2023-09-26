@@ -3,17 +3,20 @@ package universidadClaseMain;
 import java.sql.Connection;
 import java.time.LocalDate;
 import universidadejemplo.Entidades.*;
+import universidadejemplo.Vista.Principal;
 import universidadejemploAccesoADAtos.*;
 
 public class NewMain {
 
     public static void main(String[] args) {
         Connection con = Conexion.getConexion();
+        Principal imagen = new Principal();
+        imagen.show();
 //        Materia mat=new Materia("Matematica", 2, true);
 //        Materia mat1=new Materia("Ingles", 2, true);
 //        Materia mat2=new Materia("Historia", 2, true);
         //Materia mat3 = new Materia("Lengua", 4, true);
-        MateriaData mate = new MateriaData();
+        //MateriaData mate = new MateriaData();
 //        mate.guardarMateria(mat);
 //        mate.guardarMateria(mat1);
 //        mate.guardarMateria(mat2);
@@ -80,14 +83,14 @@ public class NewMain {
             System.out.println("Id de la materia: " + materias.getIdMateria());
        
             System.out.println("********************");*/
-        Inscripcion insc = new Inscripcion();
-        InscripcionData in = new InscripcionData();
-         for (Materia materias : in.obtenerMateriasNOCursadas(1)) {
-            System.out.println("Materia cursada: " + materias.getNombre());
-            //System.out.println("Año de cursada: " + materias.getAnio());
-            System.out.println("Id de la materia: " + materias.getIdMateria());
-       
-            System.out.println("********************");
+//        Inscripcion insc = new Inscripcion();
+//        InscripcionData in = new InscripcionData();
+//         for (Materia materias : in.obtenerMateriasNOCursadas(1)) {
+//            System.out.println("Materia cursada: " + materias.getNombre());
+//            //System.out.println("Año de cursada: " + materias.getAnio());
+//            System.out.println("Id de la materia: " + materias.getIdMateria());
+//       
+//            System.out.println("********************");
         //Inscripcion insc = new Inscripcion();
        // InscripcionData in = new InscripcionData();
 //         for (Alumno alu : in.obtenerAlumnosXMateria(3)) {
@@ -112,5 +115,6 @@ public class NewMain {
             System.out.println("Nota"+inscripcion.getNota());
         }*/
     }
+        
     }
-}
+

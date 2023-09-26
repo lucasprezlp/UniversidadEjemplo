@@ -145,7 +145,8 @@ public class InscripcionInternalFrame extends javax.swing.JInternalFrame {
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
         // TODO add your handling code here:
-                dispose();
+        dispose();
+        principalMostrarFondo();
     }//GEN-LAST:event_jBSalirActionPerformed
 
 
@@ -159,5 +160,10 @@ public class InscripcionInternalFrame extends javax.swing.JInternalFrame {
 
     private void setLocationRelativoTo(Object object) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    private void principalMostrarFondo() {
+        Principal imagen = new Principal();
+        imagen.show();
     }
 }
