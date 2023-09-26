@@ -3,10 +3,8 @@ package universidadejemplo.Vista;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import universidadejemplo.Entidades.Alumno;
-import universidadejemplo.Entidades.Materia;
+import universidadejemplo.Entidades.*;
 import javax.swing.table.DefaultTableModel;
-import universidadejemplo.Entidades.Inscripcion;
 import universidadejemploAccesoADAtos.*;
 
 public class ManejoNotas extends javax.swing.JInternalFrame {
@@ -16,16 +14,12 @@ public class ManejoNotas extends javax.swing.JInternalFrame {
     private MateriaData mData;
     private AlumnoData aData;
     private DefaultTableModel modelo;
-    private Inscripcion inscrip = new Inscripcion();
-    private Alumno al;
-    private Materia m;
 
   public ManejoNotas() {
     initComponents();
     aData = new AlumnoData();
     mData = new MateriaData();
     listaM = mData.listarMateria();
-    m = mData.buscarMateria(m.getIdMateria());
     modelo = new DefaultTableModel();
     inscData = new InscripcionData();
     listaA = aData.listarAlumno(); // Agrega esta línea para inicializar listaA
@@ -130,49 +124,30 @@ public class ManejoNotas extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBSalir)
                     .addComponent(jBGuardar))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
-       int filaSeleccionada=jTableInscrip.getSelectedRow();
-        if(filaSeleccionada !=-1){
-            
-            Alumno selec = (Alumno)jcbAlumno.getSelectedItem();
-            
-            String columna=(String)modelo.getValueAt(filaSeleccionada, 0);
-            String columna1 = (String) modelo.getValueAt(filaSeleccionada, 1);
-            String columna2 = (String) modelo.getValueAt(filaSeleccionada, 2);
-            List<Materia> lista = (ArrayList) inscData.actualizarNota(WIDTH, WIDTH, WIDTH)
-            Materia m = new Materia(idMateria, nombreMateria, anio, true);
-           // List<Materia> lista = (ArrayList) inscData.obtenerMateriasCursadas(selec.getIdAlumno());
-             for (Materia m : lista) {
-            modelo.addRow(new Object[]{i});
-            
-             }
-            Inscripcion i = new Inscripcion(al, m, 0);
-            inscData.guardarInscripcion(i);
-            borrarFilaTabla();
-            
-            
-            modelo.addRow(new Object[]{});
-   
-       //materiaActual.setIdMateria(Integer.parseInt(jLCodigo.getText()))
-      //  modelo.addRow(new os[]{"",""});
-       /* listaM = inscData.actualizarNota(selec.());
-        for(Materia m: listaM){
-            modelo.addRow(new Object[]{m.getNota(), m.getNombre(), m.getAnio()});
+       Alumno selec = (Alumno)jcbAlumno.getSelectedItem();
+       
+      List<Materia> listaMaterias = inscData.obtenerMateriasCursadas(selec.getIdAlumno());
+        System.out.println(listaMaterias);
+         for(Materia m: listaMaterias){
+              
+           modelo.addRow(new Object[]{m.getIdMateria(), m.getNombre(), m.getAnio()});  
+           
         }
-      */
+      
        //debe listar las materias en la tabla
        //debe usar el actualizarNota(idInscripcion, idAlumno
        //idMateria, dobule nota)
        
        
        
-        }
+       
        
     }//GEN-LAST:event_jBGuardarActionPerformed
 
