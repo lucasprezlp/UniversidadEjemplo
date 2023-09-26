@@ -103,9 +103,9 @@ public class AlumnoData {
 
     }
 
-    public void buscarAlumnoPorDni(int dni) {
+    public Alumno buscarAlumnoPorDni(int dni) {
         String sql = "SELECT idAlumno, dni, apellido, nombre, fechaNacimiento FROM alumno WHERE dni = ? AND estado = 1";
-        Alumno alumno;
+        Alumno alumno=null;
         try {
             ps = con.prepareStatement(sql);
             ps.setInt(1, dni);
@@ -119,7 +119,7 @@ public class AlumnoData {
                 alumno.setFechaNac(rs.getDate("fechaNacimiento").toLocalDate());
                 alumno.setActivo(true);
 
-                JOptionPane.showMessageDialog(null, alumno.toString());
+                //JOptionPane.showMessageDialog(null, alumno.toString());
             } else {
                 JOptionPane.showMessageDialog(null, "no existe el alumno");
                 ps.close();
@@ -127,6 +127,8 @@ public class AlumnoData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
+        return alumno;
+        
     }
 
     public List<Alumno> listarAlumno() {
