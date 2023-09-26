@@ -137,6 +137,11 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
         });
 
         jBEliminar.setText("Eliminar");
+        jBEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEliminarActionPerformed(evt);
+            }
+        });
 
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -266,7 +271,7 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
         // TODO add your handling code here:
         try {
-            int codigo = Integer.parseInt(jTCódigo.getText());
+            Integer codigo = Integer.parseInt(jTCódigo.getText());
             int id = codigo;
             String nombre = jTNombre.getText();
             int anio = (Integer.parseInt(jTAño.getText()));
@@ -292,6 +297,18 @@ public class MateriaInternalFrame extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Ingrese un codigo valido");
         }
     }//GEN-LAST:event_jBGuardarActionPerformed
+
+    private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
+        // TODO add your handling code here:
+        if (materiaActual != null){
+            mData.eliminarMateria(materiaActual.getIdMateria());
+            materiaActual = null;
+            jTCódigo.setText("");
+        jTNombre.setText("");
+        jTAño.setText("");
+        jRBEstado.setSelected(isClosed);
+        }
+    }//GEN-LAST:event_jBEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
