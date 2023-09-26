@@ -28,12 +28,20 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         this.setContentPane(fondo);
         initComponents();
-
+        
     //  getContentPane().setLayout(new BorderLayout());
 //getContentPane().add(jDesktopPane3, BorderLayout.CENTER);
 
-    }
-
+    }   
+//    public static reopen (){
+//      InscripcionInternalFrame uno = new InscripcionInternalFrame();
+//        jDesktopPane3.removeAll();
+//        jDesktopPane3.repaint();
+//        uno.setVisible(true);
+//        jDesktopPane3.add(uno);
+//        jDesktopPane3.moveToFront(uno);
+    
+//    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
