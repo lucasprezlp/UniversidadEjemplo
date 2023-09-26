@@ -85,7 +85,7 @@ public class InscripcionInternalFrame extends javax.swing.JInternalFrame {
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(181, 181, 181)
                         .addComponent(jLabel1)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jBSalir))
@@ -99,7 +99,7 @@ public class InscripcionInternalFrame extends javax.swing.JInternalFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBManejaInscrip)
                     .addComponent(jBManipulaNota))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 320, Short.MAX_VALUE)
                 .addComponent(jBSalir))
         );
 

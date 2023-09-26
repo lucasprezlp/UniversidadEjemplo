@@ -50,12 +50,6 @@ public class ManipulacionInscripcion extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Seleccione un alumno:");
 
-        jcbAlumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcbAlumnoActionPerformed(evt);
-            }
-        });
-
         jrbMateInscrip.setText("Materias Inscriptas");
         jrbMateInscrip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,10 +166,6 @@ public class ManipulacionInscripcion extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jcbAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbAlumnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcbAlumnoActionPerformed
 
     private void jrbMateInscripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbMateInscripActionPerformed
         borrarFilaTabla();
