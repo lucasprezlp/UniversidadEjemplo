@@ -49,6 +49,12 @@ public class ManejoNotas extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Seleccion de alumnos:");
 
+        jcbAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbAlumnoActionPerformed(evt);
+            }
+        });
+
         jTableInscrip.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -146,6 +152,10 @@ public class ManejoNotas extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
                 dispose();
     }//GEN-LAST:event_jBSalirActionPerformed
+
+    private void jcbAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbAlumnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcbAlumnoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

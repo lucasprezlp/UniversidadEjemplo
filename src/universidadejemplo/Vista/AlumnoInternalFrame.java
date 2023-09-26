@@ -351,6 +351,8 @@ getContentPane().add(jPanel2, BorderLayout.CENTER);
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
         dispose();
+        
+     
         // TODO add your handling code here:
     }//GEN-LAST:event_jbSalirActionPerformed
 
