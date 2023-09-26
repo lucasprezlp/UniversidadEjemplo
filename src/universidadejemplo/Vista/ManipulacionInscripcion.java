@@ -7,6 +7,7 @@ import javax.swing.table.DefaultTableModel;
 import universidadejemploAccesoADAtos.*;
 
 public class ManipulacionInscripcion extends javax.swing.JInternalFrame {
+
     private List<Materia> listaM;
     private List<Alumno> listaA;
     private InscripcionData inscData;
@@ -22,7 +23,7 @@ public class ManipulacionInscripcion extends javax.swing.JInternalFrame {
         inscData = new InscripcionData();
         mData = new MateriaData();
         cargarAlumnos();
-        armarCabeceraTable();       
+        armarCabeceraTable();
     }
 
     @SuppressWarnings("unchecked")
@@ -182,15 +183,15 @@ public class ManipulacionInscripcion extends javax.swing.JInternalFrame {
         cargaDatosInscriptas();
         jBAInscripcion.setEnabled(true);
         jBInscribir.setEnabled(false);
-        
-        
+
+
     }//GEN-LAST:event_jrbMateInscripActionPerformed
 
     private void jrbMateNOInscripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbMateNOInscripActionPerformed
-       borrarFilaTabla();
-       jrbMateInscrip.setSelected(false);
-       cargaDatosNoInscriptas();
-       jBAInscripcion.setEnabled(false);
+        borrarFilaTabla();
+        jrbMateInscrip.setSelected(false);
+        cargaDatosNoInscriptas();
+        jBAInscripcion.setEnabled(false);
         jBInscribir.setEnabled(true);
     }//GEN-LAST:event_jrbMateNOInscripActionPerformed
 
@@ -209,17 +210,18 @@ public class ManipulacionInscripcion extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jBInscribirActionPerformed
 
     private void jBAInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAInscripcionActionPerformed
-         int filaSeleccionada=jTableMaterias.getSelectedRow();
-         if(filaSeleccionada!=-1){
-             Alumno a = (Alumno) jcbAlumno.getSelectedItem();
-             int idMateria=(Integer)modelo.getValueAt(filaSeleccionada, 0);
-             inscData.borrarInscripcionMateriaAlumno(a.getIdAlumno(), idMateria);
-             borrarFilaTabla();
-         }
+        int filaSeleccionada = jTableMaterias.getSelectedRow();
+        if (filaSeleccionada != -1) {
+            Alumno a = (Alumno) jcbAlumno.getSelectedItem();
+            int idMateria = (Integer) modelo.getValueAt(filaSeleccionada, 0);
+            inscData.borrarInscripcionMateriaAlumno(a.getIdAlumno(), idMateria);
+            borrarFilaTabla();
+        }
     }//GEN-LAST:event_jBAInscripcionActionPerformed
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
         // TODO add your handling code here:
+                dispose();
     }//GEN-LAST:event_jBSalirActionPerformed
 
 
@@ -236,11 +238,12 @@ public class ManipulacionInscripcion extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton jrbMateInscrip;
     private javax.swing.JRadioButton jrbMateNOInscrip;
     // End of variables declaration//GEN-END:variables
-private void cargarAlumnos(){
-    for(Alumno item: listaA){
-        jcbAlumno.addItem(item);
+private void cargarAlumnos() {
+        for (Alumno item : listaA) {
+            jcbAlumno.addItem(item);
+        }
     }
-}
+
     private void armarCabeceraTable() {
         ArrayList<Object> filaCabecera = new ArrayList<>();
         filaCabecera.add("ID");
@@ -258,23 +261,23 @@ private void cargarAlumnos(){
             modelo.removeRow(i);
         }
     }
-    
-    private void cargaDatosNoInscriptas(){
+
+    private void cargaDatosNoInscriptas() {
         //borrarFilaTabla();
-        Alumno selec = (Alumno)jcbAlumno.getSelectedItem();
+        Alumno selec = (Alumno) jcbAlumno.getSelectedItem();
         listaM = inscData.obtenerMateriasNOCursadas(selec.getIdAlumno());
-        for(Materia m: listaM){
-             modelo.addRow(new Object[](m.getIdMateria(), m.getNombre())); 
-             
+        for (Materia m : listaM) {
+            modelo.addRow(new Object[]{m.getIdMateria(), m.getNombre(), m.getAnio()});
+
         }
     }
-    
-    private void cargaDatosInscriptas(){
+
+    private void cargaDatosInscriptas() {
         //borrarFilaTabla();
-        Alumno selec = (Alumno)jcbAlumno.getSelectedItem();
-        List <Materia> lista = (ArrayList)inscData.obtenerMateriasCursadas(selec.getIdAlumno());
-        for(Materia m: lista){
-            modelo.addRow(new Object[](m.getIdMateria(), m.getNombre(), m.getAnio()));
+        Alumno selec = (Alumno) jcbAlumno.getSelectedItem();
+        List<Materia> lista = (ArrayList) inscData.obtenerMateriasCursadas(selec.getIdAlumno());
+        for (Materia m : lista) {
+            modelo.addRow(new Object[]{m.getIdMateria(), m.getNombre(), m.getAnio()});
     }
 }
 }

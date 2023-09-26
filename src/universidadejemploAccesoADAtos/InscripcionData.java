@@ -11,8 +11,8 @@ public class InscripcionData {
 
     private Connection con = null;
     private AlumnoData aluData = new AlumnoData();
-    private MateriaData mateData= new MateriaData();
-    
+    private MateriaData mateData = new MateriaData();
+
     public InscripcionData() {
         con = Conexion.getConexion();
     }
@@ -56,7 +56,7 @@ public class InscripcionData {
         return inscripciones;
     }
 
-    public List<Inscripcion> obtenerInscripcionesPorAlumno(int id) {        
+    public List<Inscripcion> obtenerInscripcionesPorAlumno(int id) {
         List<Inscripcion> inscripciones = new ArrayList<>();
 
         try {
@@ -64,17 +64,17 @@ public class InscripcionData {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-           // System.out.println("hasta aca funciona? ayudame san GPT");
+            // System.out.println("hasta aca funciona? ayudame san GPT");
             while (rs.next()) {
                 Inscripcion inscripcion = new Inscripcion();
                 inscripcion.setIdInscripcion(rs.getInt("idInscripto"));
                 Alumno alu = aluData.buscarAlumno(rs.getInt("IdAlumno"));
-                Materia mate=mateData.buscarMateria(rs.getInt("IdMateria"));
+                Materia mate = mateData.buscarMateria(rs.getInt("IdMateria"));
                 inscripcion.setAlumno(alu);
                 inscripcion.setMateria(mate);
                 inscripcion.setIdInscripcion(rs.getInt("nota"));
                 inscripciones.add(inscripcion);
-                
+
                 //JOptionPane.showMessageDialog(null, "Inscripciones listadas");
             }
         } catch (SQLException ex) {
@@ -87,8 +87,8 @@ public class InscripcionData {
         List<Materia> materias = new ArrayList<>();
         try {
             String sql = "SELECT inscripcion.idMateria, nombre, anio FROM inscripcion JOIN materia"
-                       + " ON (inscripcion.idMateria=materia.idMateria) WHERE inscripcion.idAlumno=?"
-                       + " AND materia.estado=1;";
+                    + " ON (inscripcion.idMateria=materia.idMateria) WHERE inscripcion.idAlumno=?"
+                    + " AND materia.estado=1;";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
@@ -97,7 +97,7 @@ public class InscripcionData {
                 materia.setIdMateria(rs.getInt("idMateria"));
                 materia.setNombre(rs.getString("nombre"));
                 materia.setAnio(rs.getInt("anio"));
-                materias.add(materia);            
+                materias.add(materia);
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al obtener la materia" + "\n" + ex);
@@ -144,14 +144,13 @@ public class InscripcionData {
 
     }
 
-    public void actualizarNota(int idInscripto, int idAlumno, int idMateria, double nota) {
-        String sql = "UPDATE inscripcion SET idAlumno=?, idMateria=?, nota=? WHERE idInscripto = ?";
+    public void actualizarNota(int idAlumno, int idMateria, double nota) {
+        String sql = "UPDATE inscripcion SET nota=? WHERE idAlumno=? AND idMateria=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, idAlumno);
-            ps.setInt(2, idMateria);
-            ps.setDouble(3, nota);
-            ps.setInt(4, idInscripto);
+            ps.setDouble(1, nota);
+            ps.setInt(2, idAlumno);
+            ps.setInt(3, idMateria);
             int exito = ps.executeUpdate();
             if (exito == 1) {
                 JOptionPane.showMessageDialog(null, "Nota modificada");
@@ -180,6 +179,6 @@ public class InscripcionData {
             JOptionPane.showMessageDialog(null, "Error al obtener la materia");
         }
         return alu;
-        
+
     }
 }

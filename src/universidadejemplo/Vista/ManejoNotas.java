@@ -15,16 +15,18 @@ public class ManejoNotas extends javax.swing.JInternalFrame {
     private AlumnoData aData;
     private DefaultTableModel modelo;
 
-    public ManejoNotas() {
-        initComponents();
-        aData = new AlumnoData();
-        listaM = mData.listarMateria();
-        modelo = new DefaultTableModel();
-        inscData = new InscripcionData();
-        mData = new MateriaData();
-        cargarAlumnos();
-        armarCabeceraTable();
-    }
+  public ManejoNotas() {
+    initComponents();
+    aData = new AlumnoData();
+    mData = new MateriaData();
+    listaM = mData.listarMateria();
+    modelo = new DefaultTableModel();
+    inscData = new InscripcionData();
+    listaA = aData.listarAlumno(); // Agrega esta línea para inicializar listaA
+    cargarAlumnos();
+    armarCabeceraTable();
+}
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -124,13 +126,10 @@ public class ManejoNotas extends javax.swing.JInternalFrame {
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
        Alumno selec = (Alumno)jcbAlumno.getSelectedItem();
-      
-       
-//¿hay q arreglar el metodo actualizar nota en inscripciondata????
-
-        listaM = inscData.actualizarNota(selec.getIdAlumno());
+       jTableInscrip.
+        listaM = inscData.actualizarNota(selec.());
         for(Materia m: listaM){
-             modelo.addRow(m);
+            modelo.addRow(new Object[]{m.getNota(), m.getNombre(), m.getAnio()});
         }
       
        //debe listar las materias en la tabla
@@ -145,6 +144,7 @@ public class ManejoNotas extends javax.swing.JInternalFrame {
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
         // TODO add your handling code here:
+                dispose();
     }//GEN-LAST:event_jBSalirActionPerformed
 
 
@@ -164,9 +164,9 @@ private void cargarAlumnos(){
 }
     private void armarCabeceraTable() {
         ArrayList<Object> filaCabecera = new ArrayList<>();
-        filaCabecera.add("ID");
+        filaCabecera.add("Código");
         filaCabecera.add("Nombre");
-        filaCabecera.add("Año");
+        filaCabecera.add("Nota");
         for (Object it : filaCabecera) {
             modelo.addColumn(it);
         }
