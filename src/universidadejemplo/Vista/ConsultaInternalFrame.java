@@ -2,6 +2,7 @@
 package universidadejemplo.Vista;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import universidadejemplo.Entidades.*;
 import javax.swing.table.DefaultTableModel;
 import universidadejemploAccesoADAtos.*;
@@ -10,6 +11,7 @@ public class ConsultaInternalFrame extends javax.swing.JInternalFrame {
 
     private List<Materia> listaM;
     private List<Alumno> listaA;
+    private List<Inscripcion> listaI;
     private InscripcionData inscData;
     private MateriaData mData;
     private AlumnoData aData;
@@ -39,7 +41,7 @@ public class ConsultaInternalFrame extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jcbMateria = new javax.swing.JComboBox<>();
+        jcbMateria = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtID = new javax.swing.JTable();
         jbSalir = new java.awt.Button();
@@ -137,10 +139,14 @@ public class ConsultaInternalFrame extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbSalirActionPerformed
 
     private void jcbMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMateriaActionPerformed
-       jcbMateria.addActionListener(jcbMateria);
-       
-       int filaSeleccionada=jtID.getSelectedRow();
-       int indice = modelo.getRowCount() - 1;
+        borrarFilaTabla();
+        cargarAlumnos();
+        
+        
+//       jcbMateria.addActionListener(jcbMateria);
+//       
+//       int filaSeleccionada=jtID.getSelectedRow();
+//       int indice = modelo.getRowCount() - 1;
 //        for (int i = indice; i >= 0; i--) {
 //            modelo.setValueAt(a.getIdAlumno(),a.getDni(),a.getApellido(),a.getNombre());
 //        }
@@ -156,13 +162,13 @@ public class ConsultaInternalFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private java.awt.Button jbSalir;
-    private javax.swing.JComboBox<String> jcbMateria;
+    private javax.swing.JComboBox jcbMateria;
     private javax.swing.JTable jtID;
     // End of variables declaration//GEN-END:variables
    
     private void cargarMaterias() {
         for (Materia item : listaM) {
-            jcbMateria.addItem(item.getNombre());
+            jcbMateria.addItem(item);
         }
     }
 
@@ -189,5 +195,17 @@ public class ConsultaInternalFrame extends javax.swing.JInternalFrame {
     private void principalMostrarFondo() {
         Principal imagen = new Principal();
         imagen.show();
+    }
+    
+    private void cargarAlumnos(){
+        Materia selec = (Materia)jcbMateria.getSelectedItem();
+        int selecId = selec.idMateria;
+        listaA = inscData.obtenerAlumnosXMateria(selecId);
+        
+        for(Alumno m: listaA)
+            if(m.activo=true){
+            modelo.addRow(new Object[]{m.getIdAlumno(),m.getDni(),m.getApellido(),m.getNombre()});
+        }
+
     }
 }
