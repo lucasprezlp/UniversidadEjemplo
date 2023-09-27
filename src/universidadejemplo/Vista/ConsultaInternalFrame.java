@@ -168,10 +168,11 @@ public class ConsultaInternalFrame extends javax.swing.JInternalFrame {
    
     private void cargarMaterias() {
         for (Materia item : listaM) {
+            
             jcbMateria.addItem(item);
-        }
+        
     }
-
+    }
     private void armarCabeceraTable() {
         ArrayList<Object> filaCabecera = new ArrayList<>();
         filaCabecera.add("ID");
@@ -199,8 +200,8 @@ public class ConsultaInternalFrame extends javax.swing.JInternalFrame {
     
     private void cargarAlumnos(){
         Materia selec = (Materia)jcbMateria.getSelectedItem();
-        int selecId = selec.idMateria;
-        listaA = inscData.obtenerAlumnosXMateria(selecId);
+        int idmateria = selec.idMateria;
+        listaA = inscData.obtenerAlumnosXMateria(idmateria);
         
         for(Alumno m: listaA)
             if(m.activo=true){
