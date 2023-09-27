@@ -36,22 +36,25 @@ public class InscripcionData {
             JOptionPane.showMessageDialog(null, "error en la inscripción: " + "\n" + ex);
         }
     }
-
     public List<Inscripcion> obtenerInscripciones() {
+        String sql = "SELECT idInscripto, m.idMateria, m.nombre, nota, m.estado, a.idAlumno, dni, apellido, a.nombre, fechaNacimiento, a.estado, anio FROM inscripcion i "
+                + "JOIN alumno a ON i.idAlumno = a.idAlumno "
+                + "JOIN materia m ON i.idMateria = m.idMateria ";
+
         List<Inscripcion> inscripciones = new ArrayList<>();
+
         try {
-            String sql = "SELECT * FROM inscripcion";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Inscripcion inscripcion = new Inscripcion();
-                inscripcion.setIdInscripcion(rs.getInt("idInscripto"));
-                inscripcion.setNota(rs.getDouble("nota"));
-                inscripciones.add(inscripcion);
-                JOptionPane.showMessageDialog(null, "Inscripciones listadas");
+                Alumno a = new Alumno(rs.getInt("idAlumno"), rs.getInt("dni"), rs.getString("apellido"), rs.getString("nombre"), rs.getDate("fechaNacimiento").toLocalDate(), rs.getBoolean("estado"));
+                Materia m = new Materia(rs.getInt("idMateria"), rs.getString("nombre"), rs.getInt("anio"), rs.getBoolean("estado"));
+                Inscripcion i = new Inscripcion(rs.getInt("idInscripto"), a, m, rs.getInt("nota"));
+                inscripciones.add(i);
             }
+           // ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex);
+            JOptionPane.showMessageDialog(null, "Error " + ex.getMessage());
         }
         return inscripciones;
     }
